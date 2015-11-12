@@ -7,8 +7,8 @@
 chrome.app.runtime.onLaunched.addListener(function(launchData) {
    var screenWidth = screen.availWidth;
   var screenHeight = screen.availHeight;
-  var width = 900;
-  var height = 600;
+  var width = 1100;
+  var height = 800;
 
   chrome.app.window.create('index.html', {
     id: "helloWorldID",

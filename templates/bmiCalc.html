@@ -1,0 +1,34 @@
+<div class="form-inline">
+    <div class="form-group wGroup">
+      <label for="weight" class="sr-only">Weight:</label>
+      <input name="weight" class="form-control bmiInput" type="text" placeholder="Weight"/>
+    </div>
+    <select id="weightUnit" class="form-control bmiUnit" tabindex = "-1">
+      <option value="kg" >kg</option>
+      <option value="lbs" >lbs</option>
+    </select>
+  <br/><br/>
+    <div class="form-group hGroup">
+      <label for="height" class="sr-only">Height:</label>
+      <input name="height" class="form-control bmiInput" type="text" placeholder="Height"/>
+    </div>
+    <select id="heightUnit" class="form-control bmiUnit" tabindex = "-1">
+      <option value="cm" >cm</option>
+      <option value="m" >m</option>
+      <option value="ft" >ft</option>
+    </select>
+</div>
+<h3><p class="text-center" id="response"></p></h3>
+
+<h3>BMI Ranges</h3>
+<table class="table">
+  <tr><th>Category</th><th>BMI Range</th></tr>
+  <tr id="l_1" class="l"><td>Very severely underweight</td><td>less than 15</td></tr>
+  <tr id="l_2" class="l"><td>Severely underweight</td><td>from 15.0 to 16.0</td></tr>
+  <tr id="l_3" class="l"><td>Underweight</td><td>from 16.0 to 18.5</td></tr>
+  <tr id="l_4" class="l"><td>Normal (healthy weight)</td><td>from 18.5 to 25</td></tr>
+  <tr id="l_5" class="l"><td>Overweight</td><td>from 25 to 30</td></tr>
+  <tr id="l_6" class="l"><td>Obese Class I (Moderately obese)</td><td>from 30 to 35</td></tr>
+  <tr id="l_7" class="l"><td>Obese Class II (Severely obese)</td><td>from 35 to 40</td></tr>
+  <tr id="l_8" class="l"><td>Obese Class III (Very severely obese)</td><td>over 40</td></tr>
+</table>

@@ -1,11 +1,13 @@
 $(document).ready(function(){
   loadModules();
+  // click functions
+   
 }); 
     
 
 function loadModules(){
-    document.querySelector('#greeting').innerText =
-    'Hello World! This is Amal Bose';
+    // document.querySelector('#greeting').innerText =
+    // 'Hello Amal Bose...';
     
     var module, sidebarInnerHTML;
     for	(index = 0; index < modules.length; index++) {
@@ -20,7 +22,9 @@ function loadModules(){
       $('.sidebar-nav').append(sidebarInnerHTML);
       
       $('.'+module.method).click( window[module.method]);
-      
+
     }
-   
+   loadAllModuleTemplates();
 }
+
+

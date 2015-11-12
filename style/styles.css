@@ -103,3 +103,14 @@
         margin-right: 0;
     }
 }
+
+.hidden {
+  display:none;
+}
+
+#content-body {
+  margin : 50px;
+}
+
+#heading {
+  text-align : center;
