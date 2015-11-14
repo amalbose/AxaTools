@@ -1,0 +1,292 @@
+<div class="form-group">
+    <select id="unitSelector" class="form-control">
+      <option value="angle" >Angle</option>
+      <option value="area" >Area</option>
+      <option value="data" >Data</option>
+      <option value="energy" >Energy</option>
+      <option value="length" >Length</option>
+      <option value="mass" >Mass</option>
+      <option value="speed" >Speed</option>
+      <option value="temp" >Temperature</option>
+      <option value="time" >Time</option>
+      <option value="volume" >Volume</option>
+    </select>
+</div>
+<br/>
+<div class="unitGroup">
+  <div class="form-inline">
+    <input name="inputIn" class="form-control convIn" value='1'/>
+    <strong<span>&nbsp;=&nbsp;</span></strong>
+    <input name="inputOut" class="form-control convIn" />
+  </div>
+  <!-- length -->
+  <div class="form-inline selectors length">
+    <select id="selectIn" class="form-control convIn">
+        <option selected="1" value="kilometer">Kilometer</option>
+        <option value="meters">Metre</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="millimeter">Millimeter</option>
+        <option value="micrometer">Micrometer</option>
+        <option value="fathom">Fathom</option>
+        <option value="furlongs">Furlongs</option>
+        <option value="nanometer">Nanometer</option>
+        <option value="mile">Mile</option>
+        <option value="yard">Yard</option>
+        <option value="feet">Feet</option>
+        <option value="inch">Inch</option>
+        <option value="lightyears">Light Years</option>
+        <option value="parsecs">Parsecs</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="kilometer">Kilometer</option>
+        <option value="meters">Metre</option>
+        <option value="centimeter">Centimeter</option>
+        <option value="millimeter">Millimeter</option>
+        <option value="micrometer">Micrometer</option>
+        <option value="fathom">Fathom</option>
+        <option value="furlongs">Furlongs</option>
+        <option value="nanometer">Nanometer</option>
+        <option selected="1" value="mile">Mile</option>
+        <option value="yard">Yard</option>
+        <option value="feet">Feet</option>
+        <option value="inch">Inch</option>
+        <option value="lightyears">Light Years</option>
+        <option value="parsecs">Parsecs</option>
+      </select>
+  </div>
+    <!-- angle -->
+  <div class="form-inline selectors angle hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option value="arcminute">Arcminute</option>
+        <option value="arcsecond">Arcsecond</option>
+        <option value="circle">Circle</option>
+        <option selected="1" value="degree">Degree</option>
+        <option value="gon">Gon</option>
+        <option value="grad">Grad</option>
+        <option value="milN">Mil (Nato)</option>
+        <option value="milSU">Mil (Soviet Union)</option>
+        <option value="milS">Mil (Sweden)</option>
+        <option value="octant">Octant</option>
+        <option value="quadrant">Quadrant</option>
+        <option value="radian">Radian</option>
+        <option value="revolution">Revolution</option>
+        <option value="sextant">Sextant</option>
+        <option value="sign">Sign</option>
+        <option value="turn">Turn</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="arcminute">Arcminute</option>
+        <option value="arcsecond">Arcsecond</option>
+        <option value="circle">Circle</option>
+        <option value="degree">Degree</option>
+        <option value="gon">Gon</option>
+        <option value="grad">Grad</option>
+        <option value="milN">Mil (Nato)</option>
+        <option value="milSU">Mil (Soviet Union)</option>
+        <option value="milS">Mil (Sweden)</option>
+        <option value="octant">Octant</option>
+        <option value="quadrant">Quadrant</option>
+        <option selected="1" value="radian">Radian</option>
+        <option value="revolution">Revolution</option>
+        <option value="sextant">Sextant</option>
+        <option value="sign">Sign</option>
+        <option value="turn">Turn</option>
+      </select>
+  </div>
+ <!-- area -->
+  <div class="form-inline selectors area hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option value="acre">Acre</option>
+        <option value="are">Are</option>
+        <option value="hectares">Hectares</option>
+        <option value="sqcm">Square Centimeter</option>
+        <option value="sqft">Square Feet</option>
+        <option selected="1" value="sqm">Square Meter</option>
+        <option value="sqkm">Square Kilometer</option>
+        <option value="sqml">Square Miles</option>
+        <option value="sqy">Square Yards</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="acre">Acre</option>
+        <option value="are">Are</option>
+        <option value="hectares">Hectares</option>
+        <option value="sqcm">Square Centimeter</option>
+        <option selected="1" value="sqft">Square Feet</option>
+        <option value="sqm">Square Meter</option>
+        <option value="sqkm">Square Kilometer</option>
+        <option value="sqml">Square Miles</option>
+        <option value="sqy">Square Yards</option>
+      </select>
+  </div>
+     <!-- data -->
+  <div class="form-inline selectors data hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option value="bit">Bit</option>
+        <option value="nibble">Nibble</option>
+        <option value="byte">Byte</option>
+        <option value="kbit">Kilo Bit</option>
+        <option selected="1" value="kb">Kilo Byte</option>
+        <option value="mBit">Mega Bit</option>
+        <option value="mb">Mega Byte</option>
+        <option value="gBit">Giga Bit</option>
+        <option value="gb">Giga Byte</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="bit">Bit</option>
+        <option value="nibble">Nibble</option>
+        <option value="byte">Byte</option>
+        <option value="kbit">Kilo Bit</option>
+        <option value="kb">Kilo Byte</option>
+        <option value="mBit">Mega Bit</option>
+        <option selected="1" value="mb">Mega Byte</option>
+        <option value="gBit">Giga Bit</option>
+        <option value="gb">Giga Byte</option>
+      </select>
+  </div>
+ <!-- energy -->
+  <div class="form-inline selectors energy hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option selected="1" value="calories">Calories</option>
+        <option value="kilocalories">Kilocalories</option>
+        <option value="ev">Electron Volts</option>
+        <option value="joules">Joules</option>
+        <option value="nm">Newton Meters</option>
+        <option value="wh">Watt hours</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="calories">Calories</option>
+        <option value="kilocalories">Kilocalories</option>
+        <option value="ev">Electron Volts</option>
+        <option selected="1" value="joules">Joules</option>
+        <option value="nm">Newton Meters</option>
+        <option value="wh">Watt hours</option>
+      </select>
+  </div>
+<!-- mass -->
+  <div class="form-inline selectors mass hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option value="carats">Carats</option>
+        <option value="grains">Grains</option>
+        <option value="grams">Grams</option>
+        <option value="ounces">Ounces</option>
+        <option value="pounds">Pounds</option>
+        <option selected="1" value="kg">Kilo Grams</option>
+        <option value="tonnes">Tonnes</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="carats">Carats</option>
+        <option value="grains">Grains</option>
+        <option value="grams">Grams</option>
+        <option value="ounces">Ounces</option>
+        <option selected="1" value="pounds">Pounds</option>
+        <option value="kg">Kilograms</option>
+        <option value="tonnes">Tonnes</option>
+      </select>
+  </div>
+<!-- speed -->
+  <div class="form-inline selectors speed hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option selected="1" value="ms">Meters / second</option>
+        <option value="kms">Kilometers / second</option>
+        <option value="fs">Foot / second</option>
+        <option value="mis">Miles / second</option>
+        <option value="mh">Meters / hour</option>
+        <option value="kmh">Kilometers / hour</option>
+        <option value="mih">Miles / hour</option>
+        <option value="k">Knot</option>
+        <option value="l">Speed of Light(m/s)</option>
+        <option value="s">Speed of Sound(m/s)</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="ms">Meters / second</option>
+        <option value="kms">Kilometers / second</option>
+        <option value="fs">Foot / second</option>
+        <option value="mis">Miles / second</option>
+        <option value="mh">Meters / hour</option>
+        <option selected="1" value="kmh">Kilometers / hour</option>
+        <option value="mih">Miles / hour</option>
+        <option value="k">Knot</option>
+        <option value="l">Speed of Light(m/s)</option>
+        <option value="s">Speed of Sound(m/s)</option>
+      </select>
+  </div>
+<!-- temp -->
+  <div class="form-inline selectors temp hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option selected="1" value="c">Celsius</option>
+        <option value="f">Fahrenheit</option>
+        <option value="k">Kelvin</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="c">Celsius</option>
+        <option selected="1" value="f">Fahrenheit</option>
+        <option value="k">Kelvin</option>
+      </select>
+  </div>
+<!-- time -->
+  <div class="form-inline selectors time hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option value="centuries">Centuries</option>
+        <option selected="1" value="days">Days</option>
+        <option value="decades">Decades</option>
+        <option value="fortnights">Fortnights</option>
+        <option value="hours">Hours</option>
+        <option value="microseconds">Microseconds</option>
+        <option value="millenia">Millenia</option>
+        <option value="milliseconds">Milliseconds</option>
+        <option value="minutes">Minutes</option>
+        <option value="months">Months</option>
+        <option value="nanoseconds">Nanoseconds</option>
+        <option value="seconds">Seconds</option>
+        <option value="weeks">Weeks</option>
+        <option value="years">Years</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="centuries">Centuries</option>
+        <option value="days">Days</option>
+        <option value="decades">Decades</option>
+        <option value="fortnights">Fortnights</option>
+        <option selected="1" value="hours">Hours</option>
+        <option value="microseconds">Microseconds</option>
+        <option value="millenia">Millenia</option>
+        <option value="milliseconds">Milliseconds</option>
+		<option value="minutes">Minutes</option>
+        <option value="months">Months</option>
+        <option value="nanoseconds">Nanoseconds</option>
+        <option value="seconds">Seconds</option>
+        <option value="weeks">Weeks</option>
+        <option value="years">Years</option>
+      </select>
+  </div>
+<!-- volume -->
+  <div class="form-inline selectors volume hidden">
+    <select id="selectIn" class="form-control convIn">
+        <option selected="1" value="ug">US Gallon</option>
+        <option value="uq">US Quart</option>
+        <option value="up">US Pint</option>
+        <option value="l">Litre</option>
+        <option value="ig">Imperial Gallon</option>
+        <option value="iq">Imperial Quart</option>
+        <option value="ip">Imperial Pint</option>
+      </select>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <select id="selectOut" class="form-control convIn">
+        <option value="ug">US Gallon</option>
+        <option value="uq">US Quart</option>
+        <option value="up">US Pint</option>
+        <option selected="1" value="l">Litre</option>
+        <option value="ig">Imperial Gallon</option>
+        <option value="iq">Imperial Quart</option>
+        <option value="ip">Imperial Pint</option>
+      </select>
+  </div>
+</div>
