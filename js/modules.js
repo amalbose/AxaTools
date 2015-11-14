@@ -287,7 +287,7 @@ var conQuantities = [
 ];
 
 function unitConv(){
-  showModule('#unitConv','Unit Convertor');
+  showModule('#unitConv','Unit Converter');
   
   //default select
   $('#unitSelector option[value="length"]').attr("selected",true);
@@ -447,14 +447,16 @@ function occurrences(string, subString) {
 // Commmon
 
 function showModule(className,moduleName) {
+	//clear all current tab
+	$('.sidebar-nav>li').removeClass('curSubtab');
     var module;
     for	(index = 0; index < modules.length; index++) {
-      module = modules[index];
-      $('#'+module.method).addClass('hidden');
-      console.log(module.method);
+      	module = modules[index];
+		$('#'+module.method).addClass('hidden');
+		if(module.name===moduleName)
+			$('.sidebar-nav .'+module.method).addClass('curSubtab');
     }
   
-  $('#heading').html(moduleName);
-  $(className).removeClass('hidden');
-    
+	$('#heading').html(moduleName);
+	$(className).removeClass('hidden');
 }
