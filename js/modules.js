@@ -1,19 +1,18 @@
 var modules = [
   
   {
-    "name" : "BMI Calculator",
-    "method" : "bmiCalc"
-  },
-  
-  {
     "name" : "Unit Converter",
     "method" : "unitConv"
   },
-  
   {
     "name" : "Character Counter",
     "method" : "charCount"
+  },
+  {
+    "name" : "BMI Calculator",
+    "method" : "bmiCalc"
   }
+  
   
   // Resistor Color code
   // xml json validator
