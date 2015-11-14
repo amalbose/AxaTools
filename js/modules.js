@@ -11,6 +11,10 @@ var modules = [
   {
     "name" : "BMI Calculator",
     "method" : "bmiCalc"
+  },
+  {
+    "name" : "Base 64 Encoder",
+    "method" : "base64"
   }
   
   
@@ -44,6 +48,9 @@ function loadAllModuleTemplates(){
     });
 	jQuery.get('templates/charCount.html', function(data) {
         $('#content-body').append(hideDiv('charCount', data));
+    });
+	jQuery.get('templates/base64.html', function(data) {
+        $('#content-body').append(hideDiv('base64', data));
     });
 }
 
@@ -443,6 +450,28 @@ function occurrences(string, subString) {
     return n;
 }
 
+// BASE 64
+function base64(){
+	showModule('#base64','Base 64 Encoder/Decorder');
+	
+	$( "#normalStr" ).keyup(function() {
+		$('#encStr').parent().removeClass('has-error');
+		console.log('up');
+		var encodedData = btoa($( "#normalStr" ).val());
+
+		$('#encStr').val(encodedData);
+	});	
+	$( "#encStr" ).keyup(function() {
+		try {
+			var encodedData = atob($( "#encStr" ).val());
+			$('#encStr').parent().removeClass('has-error');
+			$('#normalStr').val(encodedData);
+		} catch(e) {
+			$('#encStr').parent().addClass('has-error');
+		}
+	});
+}
+
 // Commmon
 
 function showModule(className,moduleName) {
@@ -452,7 +481,7 @@ function showModule(className,moduleName) {
     for	(index = 0; index < modules.length; index++) {
       	module = modules[index];
 		$('#'+module.method).addClass('hidden');
-		if(module.name===moduleName)
+		if(module.method===className.substring(1))
 			$('.sidebar-nav .'+module.method).addClass('curSubtab');
     }
   
