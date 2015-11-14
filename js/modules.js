@@ -2,21 +2,17 @@ var modules = [
   
   {
     "name" : "BMI Calculator",
-    "method" : "bmiCalc",
-    "loadmethod" : "loadBmiCalc"
+    "method" : "bmiCalc"
   },
   
   {
     "name" : "Unit Converter",
-    "method" : "unitConv",
-    "loadmethod" : "loadUnitConv"
-
+    "method" : "unitConv"
   },
   
   {
     "name" : "Character Counter",
-    "method" : "charCount",
-    "loadmethod" : "loadCharCount",
+    "method" : "charCount"
   }
   
   // Resistor Color code
@@ -46,6 +42,9 @@ function loadAllModuleTemplates(){
     });
     jQuery.get('templates/unitConv.html', function(data) {
         $('#content-body').append(hideDiv('unitConv', data));
+    });
+	jQuery.get('templates/charCount.html', function(data) {
+        $('#content-body').append(hideDiv('charCount', data));
     });
 }
 
@@ -287,7 +286,6 @@ var conQuantities = [
     
 ];
 
-
 function unitConv(){
   showModule('#unitConv','Unit Convertor');
   
@@ -393,6 +391,58 @@ function findIndexByText(qArr, aText) {
   return -1;
 }
 
+// CHAR COUNT
+
+function charCount(){
+	showModule('#charCount','Character Counter');
+
+	$( "#charCntTA" ).keyup(function() {
+		var tAVal = $("#charCntTA").val().trim();
+		if(tAVal==='') {
+			$('#noOfChars').html('');
+			$('#noOfWords').html('');
+			$('#noOfLines').html('');
+			$('#noOfOccur').html('');
+		} else {
+			$('#noOfChars').html(tAVal.length);
+			$('#noOfWords').html(tAVal.split(' ').length);
+			$('#noOfLines').html(tAVal.split('\n').length);	
+			if($( "#wordOccur" ).val().trim() !== ''){
+				calculateOccurences(tAVal);
+			}
+		}
+	});
+	$( "#wordOccur" ).keyup(function() {
+		var tAVal = $("#charCntTA").val().trim();
+		calculateOccurences(tAVal);
+	});
+}
+
+function calculateOccurences(){
+	var tAVal = $("#charCntTA").val().trim();
+	if(tAVal==='') {
+		$('#noOfOccur').html('');	
+	} else {
+		$('#noOfOccur').html(occurrences(tAVal,$( "#wordOccur" ).val()));					
+	}
+}
+
+function occurrences(string, subString) {
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+    var n = 0,
+        pos = 0,
+        step = subString.length;
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+}
 
 // Commmon
 
