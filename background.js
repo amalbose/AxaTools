@@ -15,8 +15,11 @@ chrome.app.runtime.onLaunched.addListener(function(launchData) {
     outerBounds: {
       width: width,
       height: height,
+	  minWidth: width,
+      minHeight: height,
       left: Math.round((screenWidth-width)/2),
       top: Math.round((screenHeight-height)/2)
-    }
+    },
+	"resizable": false
   });
 });
