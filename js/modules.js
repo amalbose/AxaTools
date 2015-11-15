@@ -19,6 +19,10 @@ var modules = [
   {
     "name" : "XML - JSON",
     "method" : "xmljson"
+  },
+  {
+    "name" : "Regex",
+    "method" : "regex"
   }
   
   
@@ -58,6 +62,9 @@ function loadAllModuleTemplates(){
     });
 	jQuery.get('templates/xmljson.html', function(data) {
         $('#content-body').append(hideDiv('xmljson', data));
+    });
+	jQuery.get('templates/regex.html', function(data) {
+        $('#content-body').append(hideDiv('regex', data));
     });
 }
 
@@ -737,6 +744,29 @@ function xml2json(xml, tab) {
    var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, "\t");
    return "{\n" + tab + (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, "")) + "\n}";
 }
+
+//REGEX
+
+function regex(){
+	showModule('#regex','Regular Expression Tester');
+	
+	$('.regIn').keyup(function () {
+		if($('#dataStr').val()!=='') {
+			var re = new RegExp($('#regexStr').val(), 'g');
+			var match = $('#dataStr').val().match(re);
+			console.log(match);
+			var l = match.length;
+			var str = '';
+			for(var i = 0; i < l; i++) {
+				str+=match[i]+', ';
+			}
+			$('#words').html(str.substring(0,str.length-2));
+		}
+	});
+}
+
+
+
 // Commmon
 
 function showModule(className,moduleName) {
