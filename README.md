@@ -11,3 +11,5 @@ Chrome application having various basic utilities.
 * MD2 & MD5 Hash
 * QR Code Generator
 
+## License
+Apache License-2.0
