@@ -1,7 +1,5 @@
 $(document).ready(function(){
   loadModules();
-  // click functions
-   
 }); 
     
 
@@ -16,15 +14,19 @@ function loadModules(){
       sidebarInnerHTML = '';
       
       sidebarInnerHTML += '                <li class='+module.method+'>';
-      sidebarInnerHTML += '<a>'+module.name+'</a>';
+	  if(module.method === 'home')
+		sidebarInnerHTML += '<strong><a>'+module.name+'</a></strong>';
+	  else
+      	sidebarInnerHTML += '<a>'+module.name+'</a>';
       sidebarInnerHTML += '                </li>';
 
       $('.sidebar-nav').append(sidebarInnerHTML);
       
       $('.'+module.method).click( window[module.method]);
-
     }
+	
    loadAllModuleTemplates();
+	
 }
 
 
