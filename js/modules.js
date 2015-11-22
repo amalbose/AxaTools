@@ -1,7 +1,7 @@
 var modules = [
   
   {
-    "name" : "Axa Utilities",
+    "name" : "Axa Tools",
     "method" : "home"
   },
   {
