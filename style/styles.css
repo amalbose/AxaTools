@@ -120,3 +120,12 @@
 
 #heading {
   text-align : center;
+}
+
+.modDiv {
+	height:150px;
+	background-color: beige;
+	margin-left : 40px;
+	margin-top : 30px;
+	cursor : pointer;
+}

@@ -1,6 +1,10 @@
 var modules = [
   
   {
+    "name" : "Axa Utilities",
+    "method" : "home"
+  },
+  {
     "name" : "Unit Converter",
     "method" : "unitConv"
   },
@@ -53,6 +57,13 @@ var modules = [
 
 
 function loadAllModuleTemplates(){
+
+	$('#content-body').load('templates/home.html', function(){
+		$('.modDiv').click(function(){
+			window[$(this).attr('id').replace('OnClick','')]();
+		});
+	});
+
     jQuery.get('templates/bmiCalc.html', function(data) {
         $('#content-body').append(hideDiv('bmiCalc', data));
     });
@@ -77,15 +88,23 @@ function loadAllModuleTemplates(){
 	jQuery.get('templates/qrCode.html', function(data) {
         $('#content-body').append(hideDiv('qrCode', data));
     });
+
 }
 
+//HOME
+
+function home(){
+	$('.sidebar-nav>li').removeClass('curSubtab');
+	$('.sidebar-nav .home').addClass('curSubtab');
+	$('.mod').addClass('hidden');
+  	$('#home').removeClass('hidden');
+	$('#heading').html('AxaTools');
+}
 
 //BMI CALC
 
 function bmiCalc() {
   showModule('#bmiCalc','BMI Calculator');
-
-  
   $( ".bmiInput" ).keyup(function() {
 
       if(!$.isNumeric(  $(this).val() )){
@@ -102,10 +121,6 @@ function bmiCalc() {
      if($.isNumeric($('input[name="weight"]').val()) && $.isNumeric($('input[name="height"]').val()) )
       calculateBMI();
   });
-}
-
-function hideDiv(idVal, htmlVal) {
-  return '<div id='+idVal+' class="hidden">' + htmlVal + "</div>";
 }
 
 function calculateBMI(){
@@ -762,16 +777,22 @@ function regex(){
 	showModule('#regex','Regular Expression Tester');
 	
 	$('.regIn').keyup(function () {
-		if($('#dataStr').val()!=='') {
+		if($('#dataStr').val()!=='' && $('#regexStr').val()!=='') {
 			var re = new RegExp($('#regexStr').val(), 'g');
 			var match = $('#dataStr').val().match(re);
-			console.log(match);
-			var l = match.length;
-			var str = '';
-			for(var i = 0; i < l; i++) {
-				str+=match[i]+', ';
+			if(match != null){
+				var l = match.length;
+				var str = '';
+				for(var i = 0; i < l; i++) {
+					str+=match[i]+', ';
+				}
+				$('#words').html(str.substring(0,str.length-2));
+				$('#noOfMatch').html(l);	
+			} else {
+				$('#words').html('');
+				$('#noOfMatch').html('');
 			}
-			$('#words').html(str.substring(0,str.length-2));
+			
 		}
 	});
 }
@@ -864,4 +885,12 @@ function showModule(className,moduleName) {
   
 	$('#heading').html(moduleName);
 	$(className).removeClass('hidden');
+}
+		
+function hideDiv(idVal, htmlVal) {
+  return '<div id='+idVal+' class="hidden mod">' + htmlVal + "</div>";
+}
+		
+function showDiv(idVal, htmlVal) {
+  return '<div id='+idVal+' class="mod">' + htmlVal + "</div>";
 }
